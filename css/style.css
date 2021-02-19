@@ -1,37 +1,87 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 .container {
     max-width: 1200px;
     width: 100%;
     margin: 20px auto;
     background: blueviolet;
-    height: 500px;
+    /* height: 500px; */
 }
 .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .box {
     width: 150px;
     background-color: cadetblue;
-    margin: 0 10px;
+    margin: 10px;
 }
-
-@media (max-width:1024px) {
+.logo{
+    display: block;
+    height: 80px;
+}
+.logo img {
+    height: 100%;
+}
+nav a {
+    color:white;
+    font-size: 40px;
+    margin: 10px;
+}
+.burger {
+    display: none;
+    color: white;
+    font-size: 40px;
+}
+    /* responsive styles */
+@media (max-width :1024px) {
     .container {
+        width: 90%;
         background:green;
     }
     .box {
-        background:white
+        background-color:#fff;
+        margin: 10px 100px;
     }
 }
-
-@media(max-width:768px) {
+@media (max-width: 780px) {
     .container {
-        background: purple;
+        background : purple;
+    }
+    nav a{
+        display: none;
+    }
+    .burger {
+        display: block;
+    }
+    .box {
+        margin: 10px 50px;
     }
 }
-
-@media(max-width:480px) {
+@media (max-width:560px) {
     .container {
-        background: rgb(5, 0, 53);
+        background:blue;
+
+    }
+    .flex {
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 }
